@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Libin K K | Full Stack Developer</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #030A1C;
+            color: #ffffff;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        .section {
+            padding: 80px 0;
+        }
+
+        .bg-glass {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 40px;
+        }
+
+        .animated-text {
+            font-size: 2.5rem;
+            animation: slideInLeft 1.5s ease-out;
+        }
+
+        .download-btn {
+            border-radius: 30px;
+            padding: 10px 25px;
+            font-weight: 500;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .download-btn:hover {
+            background-color: #00f0ff;
+            color: #030A1C;
+            border-color: #00f0ff;
+            box-shadow: 0 0 12px #00f0ff;
+            transform: translateY(-2px);
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-100px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .profile-img {
+            animation: fadeZoomIn 2s ease-out;
+            width: 220px;
+            height: 220px;
+            object-fit: cover;
+        }
+
+        @keyframes fadeZoomIn {
+            0% {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .skill-box {
+            background-color: #051024;
+            border: 1px solid #061831;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            margin: 10px;
+            transition: 0.3s;
+            width: 140px;
+        }
+
+        .skill-box:hover {
+            box-shadow: 0 0 15px #00f0ff;
+            background-color: #061831;
+            transform: translateY(-5px);
+        }
+
+        .skill-box img {
+            width: 40px;
+            height: 40px;
+            margin-bottom: 10px;
+        }
+
+        .project-card {
+            background-color: #051024;
+            border: 1px solid #061831;
+            border-radius: 10px;
+            padding: 20px;
+            transition: 0.3s;
+        }
+
+        .project-card:hover {
+            box-shadow: 0 0 15px #00f0ff;
+            background-color: #061831;
+            transform: translateY(-5px);
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            background-color: #051024;
+            border: 1px solid #061831;
+            color: #fff;
+        }
+
+        .contact-form input::placeholder,
+        .contact-form textarea::placeholder {
+            color: #bbb;
+        }
+
+        .contact-info-box {
+            background-color: #051024;
+            border: 1px solid #061831;
+            padding: 20px;
+            border-radius: 10px;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-dark navbar-expand-lg bg-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Libin K K</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link text-white" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="#skills">Skills</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="#projects">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Banner -->
+    <section class="section" id="home">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6" data-aos="fade-right">
+                    <h1 class="animated-text">Hi, I'm <span class="text-info">Libin K K</span></h1>
+                    <p class="lead">Full Stack Laravel Developer</p>
+                    <p>Experienced in Laravel, Vue.js, UI/UX, REST APIs, and more</p>
+                    <a href="assets/libin-k-k.pdf" download class="btn btn-outline-info mt-3 download-btn">
+                        <i class="bi bi-download"></i> Download CV
+                    </a>
+                </div>
+                <div class="col-md-6 text-center" data-aos="fade-left">
+                    <img src="assets/libin.png" alt="Libin K K" class="rounded-circle img-fluid profile-img"
+                        style="max-width: 220px;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section class="section" id="about">
+        <div class="container bg-glass" data-aos="fade-up">
+            <h2 class="mb-4 text-center">About Me</h2>
+            <p>I am a passionate and results-driven Software Engineer with over 2 years of hands-on experience as a Full
+                Stack Laravel Developer. My expertise lies in building scalable, secure, and user-friendly web
+                applications using cutting-edge technologies like PHP, Laravel, MySQL, Vue.js, JavaScript, and modern UI
+                frameworks. I possess a deep understanding of RESTful APIs, frontend-backend integration, database
+                design, and responsive web development.</p>
+
+            <p>I have successfully led and contributed to several full-cycle development projects ranging from food
+                delivery platforms and cab booking apps to hospital and job management systems. I take pride in writing
+                clean, maintainable code, and continuously strive to improve software performance and user experience.
+                My workflow includes Git-based version control, Agile development practices, and CI/CD automation using
+                GitHub and Hostinger integration.</p>
+
+            <p>Beyond coding, I have a keen eye for UI/UX design and work with tools like Figma to visualize intuitive
+                interfaces. I am committed to continuous learning and staying updated with evolving tech trends. Whether
+                it's collaborating in a team or working independently, I bring creativity, discipline, and technical
+                precision to every project.</p>
+        </div>
+    </section>
+
+
+    <!-- Skills -->
+    <section class="section" id="skills">
+        <div class="container" data-aos="fade-up">
+            <h2 class="mb-4 text-center">Skills</h2>
+            <div class="d-flex flex-wrap justify-content-center">
+                <div class="skill-box"><img
+                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg">
+                    <p>HTML</p>
+                </div>
+                <div class="skill-box"><img
+                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg">
+                    <p>CSS</p>
+                </div>
+                <div class="skill-box"><img
+                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg">
+                    <p>JavaScript</p>
+                </div>
+                <div class="skill-box"><img
+                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jquery/jquery-original.svg">
+                    <p>jQuery</p>
+                </div>
+                <div class="skill-box"><img
+                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg">
+                    <p>Bootstrap</p>
+                </div>
+                <div class="skill-box"><img
+                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg">
+                    <p>Vue.js</p>
+                </div>
+                <div class="skill-box"><img
+                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg">
+                    <p>PHP</p>
+                </div>
+                <div class="skill-box"><img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Laravel.svg/1200px-Laravel.svg.png">
+                    <p>Laravel</p>
+                </div>
+                <div class="skill-box"><img
+                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg">
+                    <p>MySQL</p>
+                </div>
+                <div class="skill-box"><img
+                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg">
+                    <p>Git</p>
+                </div>
+                <div class="skill-box"><img
+                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg">
+                    <p>GitHub</p>
+                </div>
+                <div class="skill-box"><img
+                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg">
+                    <p>Figma</p>
+                </div>
+                <div class="skill-box"><img src="https://img.icons8.com/color/48/000000/api.png">
+                    <p>REST API</p>
+                </div>
+                <div class="skill-box"><img
+                        src="https://img.icons8.com/?size=100&id=VJz2Ob51dvZJ&format=png&color=000000">
+                    <p>Web Hosting</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience -->
+    <section class="section" id="experience">
+        <div class="container" data-aos="fade-up">
+            <h2 class="mb-4 text-center">Experience</h2>
+            <div class="row g-4">
+
+                <!-- Lilac Infotech -->
+                <div class="col-md-4">
+                    <div class="project-card h-100 text-center">
+                        <img src="assets/lilac-logo.jpeg" alt="Lilac Infotech" class="mb-3" style="width: 80px;">
+                        <h5>Associate Software Engineer</h5>
+                        <p class="mb-1"><strong>Jan 2025 – Present</strong></p>
+                        <p class="mb-1">Lilac Infotech – Calicut (On-site)</p>
+                        <ul class="text-start small ps-3">
+                            <li>Developing full-stack web and mobile applications with Laravel and modern front-end tools.</li>
+                            <li>Contributing to architecture design, code optimization, and feature enhancements for client-based projects.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Niveosys -->
+                <div class="col-md-4">
+                    <div class="project-card h-100 text-center">
+                        <img src="assets/niveosys-logo.jpeg" alt="Niveosys" class="mb-3" style="width: 80px;">
+                        <h5>PHP Laravel Developer</h5>
+                        <p class="mb-1"><strong>Aug 2024 – Jan 2025</strong></p>
+                        <p class="mb-1">Niveosys Technologies Pvt Ltd – Calicut (On-site)</p>
+                        <ul class="text-start small ps-3">
+                            <li>Developed and maintained Laravel-based web applications with RESTful APIs.</li>
+                            <li>Enhanced front-end integration for better user experience.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Savior Soft -->
+                <div class="col-md-4">
+                    <div class="project-card h-100 text-center">
+                        <img src="assets/saviorsoft-logo.png" alt="Savior Soft Solutions" class="mb-3" style="width: 80px;">
+                        <h5>Laravel Developer</h5>
+                        <p class="mb-1"><strong>Jan 2023 – May 2024</strong></p>
+                        <p class="mb-1">Savior Soft Solutions – Kollemcode (Hybrid)</p>
+                        <ul class="text-start small ps-3">
+                            <li>Built scalable Laravel applications with efficient database structures.</li>
+                            <li>Implemented user authentication and secure session handling.</li>
+                            <li>Collaborated with teams for project planning and code reviews.</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects -->
+    <section class="section" id="projects">
+        <div class="container" data-aos="fade-up">
+            <h2 class="mb-4 text-center">Projects</h2>
+            <div class="row g-4">
+
+                <div class="col-md-6">
+                    <div class="project-card h-100">
+                        <h5>Food Delivery App</h5>
+                        <p>A subscription-based food ordering platform where users can select meals from specific
+                            kitchens, schedule delivery by time and date (morning, afternoon, night), and manage orders
+                            efficiently. Designed for high usability and performance, supporting both veg and non-veg
+                            menus.</p>
+                        <small><strong>Technologies Used:</strong> HTML, CSS, Bootstrap, JavaScript, AJAX, jQuery, PHP,
+                            Laravel, MySQL</small>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="project-card h-100">
+                        <h5>Cab Booking App</h5>
+                        <p>A real-time cab booking system allowing users to book rides, track drivers on a live map,
+                            estimate fares, and manage trip history. Includes driver management, location tracking, and
+                            OTP verification.</p>
+                        <small><strong>Technologies Used:</strong> HTML, CSS, Bootstrap, JavaScript, AJAX, jQuery, PHP,
+                            Laravel, MySQL</small>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="project-card h-100">
+                        <h5>Trading Platform</h5>
+                        <p>An interactive platform for users to buy and sell financial instruments. Includes real-time
+                            market data, secure user authentication, portfolio management, and responsive design for
+                            seamless trading experience.</p>
+                        <small><strong>Technologies Used:</strong> HTML, CSS, Bootstrap, JavaScript, AJAX, jQuery, PHP,
+                            Laravel, MySQL</small>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="project-card h-100">
+                        <h5>Hospital Management System</h5>
+                        <p>A centralized system for managing hospital operations including patient records, appointment
+                            scheduling, billing, inventory, and staff management. Improves workflow efficiency and
+                            reduces administrative load.</p>
+                        <small><strong>Technologies Used:</strong> HTML, CSS, Bootstrap, JavaScript, AJAX, jQuery, PHP,
+                            Laravel, MySQL</small>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="project-card h-100">
+                        <h5>Billing Software</h5>
+                        <p>A lightweight, easy-to-use solution for generating invoices, tracking payments, and managing
+                            customer data. Tailored for small and medium-sized businesses.</p>
+                        <small><strong>Technologies Used:</strong> HTML, CSS, Bootstrap, JavaScript, AJAX, jQuery, PHP,
+                            MySQL</small>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="project-card h-100">
+                        <h5>Job Searching Platform</h5>
+                        <p>An advanced job portal where users can search for jobs, create profiles, upload resumes,
+                            track applications, and receive job notifications. Employers can post jobs and manage
+                            applicants.</p>
+                        <small><strong>Technologies Used:</strong> HTML, CSS, Bootstrap, JavaScript, AJAX, jQuery, PHP,
+                            Laravel, MySQL</small>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="project-card h-100">
+                        <h5>TCED CGRF (Thrissur Corporation Electricity Department)</h5>
+                        <p>A government-focused complaint and service management system enabling citizens to register
+                            electricity-related complaints and track resolutions. Includes admin panel, data
+                            centralization, and analytics.</p>
+                        <small><strong>Technologies Used:</strong> HTML, CSS, Bootstrap, JavaScript, AJAX, jQuery, PHP,
+                            Laravel, MySQL</small>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="project-card h-100">
+                        <h5>Insurance Investigation System</h5>
+                        <p>A web and mobile solution for third-party insurance claim investigations. Supports field data
+                            collection, photo uploads, case tracking, and secure communication with backend teams.</p>
+                        <small><strong>Technologies Used:</strong> HTML, CSS, Bootstrap, JavaScript, AJAX, jQuery, PHP,
+                            Laravel, MySQL</small>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="section" id="contact">
+        <div class="container" data-aos="fade-up">
+            <h2 class="mb-4 text-center">Contact</h2>
+            <div class="row">
+                <!-- <div class="col-md-6">
+                    <form class="contact-form">
+                        <div class="mb-3">
+                            <input type="text" class="form-control" placeholder="Your Name" required>
+                        </div>
+                        <div class="mb-3">
+                            <input type="email" class="form-control" placeholder="Your Email" required>
+                        </div>
+                        <div class="mb-3">
+                            <textarea class="form-control" rows="5" placeholder="Your Message" required></textarea>
+                        </div>
+                        <button class="btn btn-outline-light" type="submit">Send Message</button>
+                    </form>
+                </div> -->
+                <div class="col-md-12">
+                    <div class="contact-info-box">
+                        <p><strong>Name:</strong> Libin K K</p>
+                        <p><strong>Email:</strong> libinkk1999@gmail.com</p>
+                        <p><strong>Phone:</strong> +91 7708782197</p>
+                        <p><strong>Location:</strong> Kanyakumari, Tamil Nadu, India</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-center p-4 bg-dark text-light">
+        <p class="mb-0">&copy; 2025 Libin K K. All rights reserved.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>AOS.init({ duration: 1000, once: true });</script>
+</body>
+
+</html>
