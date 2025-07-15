@@ -33,26 +33,39 @@
             backdrop-filter: blur(10px);
             border-radius: 15px;
             padding: 40px;
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.18);
+            animation: fadeInGlass 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        @keyframes fadeInGlass {
+            from { opacity: 0; transform: translateY(40px) scale(0.98); }
+            to { opacity: 1; transform: translateY(0) scale(1); }
         }
 
         .animated-text {
             font-size: 2.5rem;
-            animation: slideInLeft 1.5s ease-out;
+            animation: glowText 2s ease-in-out, slideInLeft 1.5s ease-out;
+        }
+
+        @keyframes glowText {
+            0%, 100% { text-shadow: 0 0 8px #00f0ff, 0 0 16px #00f0ff33; }
+            50% { text-shadow: 0 0 24px #00f0ff, 0 0 48px #00f0ff66; }
         }
 
         .download-btn {
             border-radius: 30px;
             padding: 10px 25px;
             font-weight: 500;
-            transition: all 0.3s ease-in-out;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 2px 8px 0 rgba(0,240,255,0.08);
         }
 
         .download-btn:hover {
             background-color: #00f0ff;
             color: #030A1C;
             border-color: #00f0ff;
-            box-shadow: 0 0 12px #00f0ff;
-            transform: translateY(-2px);
+            box-shadow: 0 0 24px #00f0ff, 0 0 48px #00f0ff33;
+            transform: translateY(-2px) scale(1.04);
         }
 
         @keyframes slideInLeft {
@@ -60,7 +73,6 @@
                 opacity: 0;
                 transform: translateX(-100px);
             }
-
             to {
                 opacity: 1;
                 transform: translateX(0);
@@ -68,22 +80,27 @@
         }
 
         .profile-img {
-            animation: fadeZoomIn 2s ease-out;
+            animation: fadeZoomIn 2s cubic-bezier(0.4, 0, 0.2, 1), floatY 4s ease-in-out infinite;
             width: 220px;
             height: 220px;
             object-fit: cover;
+            box-shadow: 0 0 32px #00f0ff33;
+            transition: box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1), transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .profile-img:hover {
+            box-shadow: 0 0 48px #00f0ff, 0 0 96px #00f0ff99;
+            transform: scale(1.07);
+            z-index: 2;
         }
 
-        @keyframes fadeZoomIn {
-            0% {
-                opacity: 0;
-                transform: scale(0.8);
-            }
-
-            100% {
-                opacity: 1;
-                transform: scale(1);
-            }
+        .animated-text .glow-name {
+            transition: text-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1), color 0.4s cubic-bezier(0.4, 0, 0.2, 1), transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+        }
+        .animated-text .glow-name:hover {
+            text-shadow: 0 0 24px #00f0ff, 0 0 48px #00f0ff99;
+            color: #00f0ff;
+            transform: scale(1.08);
         }
 
         .skill-box {
@@ -93,20 +110,46 @@
             padding: 20px;
             text-align: center;
             margin: 10px;
-            transition: 0.3s;
+            transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             width: 140px;
+            box-shadow: 0 2px 8px 0 rgba(0,240,255,0.05);
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeUpSkill 1s forwards;
+        }
+        .skill-box:nth-child(1) { animation-delay: 0.1s; }
+        .skill-box:nth-child(2) { animation-delay: 0.2s; }
+        .skill-box:nth-child(3) { animation-delay: 0.3s; }
+        .skill-box:nth-child(4) { animation-delay: 0.4s; }
+        .skill-box:nth-child(5) { animation-delay: 0.5s; }
+        .skill-box:nth-child(6) { animation-delay: 0.6s; }
+        .skill-box:nth-child(7) { animation-delay: 0.7s; }
+        .skill-box:nth-child(8) { animation-delay: 0.8s; }
+        .skill-box:nth-child(9) { animation-delay: 0.9s; }
+        .skill-box:nth-child(10) { animation-delay: 1.0s; }
+        .skill-box:nth-child(11) { animation-delay: 1.1s; }
+        .skill-box:nth-child(12) { animation-delay: 1.2s; }
+        .skill-box:nth-child(13) { animation-delay: 1.3s; }
+        .skill-box:nth-child(14) { animation-delay: 1.4s; }
+
+        @keyframes fadeUpSkill {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         .skill-box:hover {
-            box-shadow: 0 0 15px #00f0ff;
+            box-shadow: 0 0 24px #00f0ff, 0 0 48px #00f0ff33;
             background-color: #061831;
-            transform: translateY(-5px);
+            transform: translateY(-8px) scale(1.05);
         }
 
         .skill-box img {
             width: 40px;
             height: 40px;
             margin-bottom: 10px;
+            filter: drop-shadow(0 0 8px #00f0ff33);
         }
 
         .project-card {
@@ -114,13 +157,22 @@
             border: 1px solid #061831;
             border-radius: 10px;
             padding: 20px;
-            transition: 0.3s;
+            transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 2px 8px 0 rgba(0,240,255,0.05);
+            opacity: 0;
+            transform: translateY(40px) scale(0.98);
+            animation: fadeUpCard 1.2s forwards;
         }
-
         .project-card:hover {
-            box-shadow: 0 0 15px #00f0ff;
+            box-shadow: 0 0 32px #00f0ff, 0 0 64px #00f0ff33;
             background-color: #061831;
-            transform: translateY(-5px);
+            transform: translateY(-8px) scale(1.03);
+        }
+        @keyframes fadeUpCard {
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
         }
 
         .contact-form input,
@@ -128,8 +180,13 @@
             background-color: #051024;
             border: 1px solid #061831;
             color: #fff;
+            transition: border-color 0.3s;
         }
-
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            border-color: #00f0ff;
+            box-shadow: 0 0 8px #00f0ff33;
+        }
         .contact-form input::placeholder,
         .contact-form textarea::placeholder {
             color: #bbb;
@@ -141,6 +198,170 @@
             padding: 20px;
             border-radius: 10px;
             color: #fff;
+            box-shadow: 0 2px 8px 0 rgba(0,240,255,0.05);
+            animation: fadeInGlass 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* Section fade-in on scroll */
+        [data-aos] {
+            opacity: 0;
+            transition-property: opacity, transform;
+        }
+        [data-aos].aos-animate {
+            opacity: 1;
+        }
+        /* Floating Terminal Button */
+        .terminal-fab {
+            position: fixed;
+            bottom: 32px;
+            right: 32px;
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #00f0ff 60%, #0fffc1 100%);
+            box-shadow: 0 0 32px #00f0ff99, 0 4px 24px #000a;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            cursor: pointer;
+            transition: box-shadow 0.3s, transform 0.3s;
+        }
+        .terminal-fab:hover {
+            box-shadow: 0 0 64px #00f0ff, 0 8px 32px #00f0ff99;
+            transform: scale(1.08) rotate(-8deg);
+        }
+        .terminal-fab svg {
+            width: 32px;
+            height: 32px;
+            color: #030A1C;
+        }
+
+        /* Terminal Modal - Fullscreen */
+        .terminal-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            max-width: 100vw;
+            max-height: 100vh;
+            background: linear-gradient(135deg, #0a1a2f 80%, #021015 100%);
+            border-radius: 0;
+            box-shadow: 0 0 128px #00f0ffcc, 0 8px 32px #000a;
+            color: #00f0ff;
+            font-family: 'Fira Mono', 'Consolas', monospace;
+            padding: 0;
+            overflow: auto;
+            z-index: 10000;
+            opacity: 0;
+            transform: scale(0.97) translateY(40px);
+            pointer-events: none;
+            transition: opacity 0.5s cubic-bezier(0.4,0,0.2,1), transform 0.5s cubic-bezier(0.4,0,0.2,1);
+            display: flex;
+            flex-direction: column;
+        }
+        .terminal-modal.active {
+            opacity: 1;
+            transform: scale(1) translateY(0);
+            pointer-events: auto;
+            animation: terminalPopIn 0.7s cubic-bezier(0.4,0,0.2,1);
+        }
+        @keyframes terminalPopIn {
+            0% { opacity: 0; transform: scale(0.9) translateY(80px) rotate(-2deg); box-shadow: 0 0 0 #00f0ff00; }
+            60% { opacity: 1; transform: scale(1.03) translateY(-8px) rotate(1deg); box-shadow: 0 0 256px #00f0ffcc; }
+            100% { opacity: 1; transform: scale(1) translateY(0) rotate(0); box-shadow: 0 0 128px #00f0ffcc; }
+        }
+        .terminal-header {
+            background: #021015;
+            padding: 18px 32px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid #00f0ff33;
+        }
+        .terminal-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            color: #00f0ff;
+        }
+        .terminal-close {
+            background: none;
+            border: none;
+            color: #00f0ff;
+            font-size: 2rem;
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+        .terminal-close:hover {
+            color: #ff00c8;
+        }
+        .terminal-body {
+            flex: 1 1 auto;
+            padding: 40px 0 40px 0;
+            background: transparent;
+            min-height: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+        }
+        .terminal-content {
+            width: 100%;
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        .terminal-line {
+            display: flex;
+            align-items: center;
+            font-size: 1.15rem;
+            margin-bottom: 6px;
+            word-break: break-all;
+        }
+        .terminal-prompt {
+            color: #00ffae;
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-right: 8px;
+        }
+        .terminal-input {
+            background: none;
+            border: none;
+            outline: none;
+            color: #00f0ff;
+            font-family: inherit;
+            font-size: 1.1rem;
+            width: 100%;
+            caret-color: #00f0ff;
+            padding: 0;
+        }
+        .terminal-cursor {
+            display: inline-block;
+            width: 10px;
+            background: #00f0ff;
+            margin-left: 2px;
+            animation: blinkCursor 0.8s steps(1) infinite;
+            height: 1.2em;
+            vertical-align: middle;
+        }
+        @keyframes blinkCursor {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+        .terminal-fake-output {
+            color: #00f0ff;
+            font-size: 1rem;
+            margin-left: 1.5em;
+            margin-bottom: 10px;
+            letter-spacing: 0.5px;
+            text-shadow: 0 0 8px #00f0ff55;
+            animation: fadeInOutput 0.7s cubic-bezier(0.4,0,0.2,1);
+        }
+        @keyframes fadeInOutput {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
     </style>
 </head>
@@ -170,7 +391,7 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-md-6" data-aos="fade-right">
-                    <h1 class="animated-text">Hi, I'm <span class="text-info">Libin K K</span></h1>
+                    <h1 class="animated-text">Hi, I'm <span class="text-info glow-name">Libin K K</span></h1>
                     <p class="lead">Full Stack Laravel Developer</p>
                     <p>Experienced in Laravel, Vue.js, UI/UX, REST APIs, and more</p>
                     <a href="assets/libin-k-k.pdf" download class="btn btn-outline-info mt-3 download-btn">
@@ -186,7 +407,7 @@
     </section>
 
     <!-- About -->
-    <section class="section" id="about">
+    <section class="section" id="about" data-aos="fade-zoom-in" data-aos-easing="ease-in-back" data-aos-delay="200" data-aos-offset="0">
         <div class="container bg-glass" data-aos="fade-up">
             <h2 class="mb-4 text-center">About Me</h2>
             <p>I am a passionate and results-driven Software Engineer with over 2 years of hands-on experience as a Full
@@ -210,50 +431,50 @@
 
 
     <!-- Skills -->
-    <section class="section" id="skills">
+    <section class="section" id="skills" data-aos="fade-up" data-aos-delay="100">
         <div class="container" data-aos="fade-up">
             <h2 class="mb-4 text-center">Skills</h2>
             <div class="d-flex flex-wrap justify-content-center">
-                <div class="skill-box"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg">
+                <div class="skill-box" data-aos="zoom-in" data-aos-delay="100"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg">
                     <p>HTML</p>
                 </div>
-                <div class="skill-box"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg">
+                <div class="skill-box" data-aos="zoom-in" data-aos-delay="200"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg">
                     <p>CSS</p>
                 </div>
-                <div class="skill-box"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg">
+                <div class="skill-box" data-aos="zoom-in" data-aos-delay="300"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg">
                     <p>JavaScript</p>
                 </div>
-                <div class="skill-box"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jquery/jquery-original.svg">
+                <div class="skill-box" data-aos="zoom-in" data-aos-delay="400"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jquery/jquery-original.svg">
                     <p>jQuery</p>
                 </div>
-                <div class="skill-box"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg">
+                <div class="skill-box" data-aos="zoom-in" data-aos-delay="500"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg">
                     <p>Bootstrap</p>
                 </div>
-                <div class="skill-box"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg">
+                <div class="skill-box" data-aos="zoom-in" data-aos-delay="600"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg">
                     <p>Vue.js</p>
                 </div>
-                <div class="skill-box"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg">
+                <div class="skill-box" data-aos="zoom-in" data-aos-delay="700"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg">
                     <p>PHP</p>
                 </div>
-                <div class="skill-box"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Laravel.svg/1200px-Laravel.svg.png">
+                <div class="skill-box" data-aos="zoom-in" data-aos-delay="800"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Laravel.svg/1200px-Laravel.svg.png">
                     <p>Laravel</p>
                 </div>
-                <div class="skill-box"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg">
+                <div class="skill-box" data-aos="zoom-in" data-aos-delay="900"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg">
                     <p>MySQL</p>
                 </div>
-                <div class="skill-box"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg">
+                <div class="skill-box" data-aos="zoom-in" data-aos-delay="1000"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg">
                     <p>Git</p>
                 </div>
-                <div class="skill-box"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg">
+                <div class="skill-box" data-aos="zoom-in" data-aos-delay="1100"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg">
                     <p>GitHub</p>
                 </div>
-                <div class="skill-box"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg">
+                <div class="skill-box" data-aos="zoom-in" data-aos-delay="1200"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg">
                     <p>Figma</p>
                 </div>
-                <div class="skill-box"><img src="https://img.icons8.com/color/48/000000/api.png">
+                <div class="skill-box" data-aos="zoom-in" data-aos-delay="1300"><img src="https://img.icons8.com/color/48/000000/api.png">
                     <p>REST API</p>
                 </div>
-                <div class="skill-box"><img src="https://img.icons8.com/?size=100&id=VJz2Ob51dvZJ&format=png&color=000000">
+                <div class="skill-box" data-aos="zoom-in" data-aos-delay="1400"><img src="https://img.icons8.com/?size=100&id=VJz2Ob51dvZJ&format=png&color=000000">
                     <p>Web Hosting</p>
                 </div>
             </div>
@@ -261,14 +482,14 @@
     </section>
 
     <!-- Experience -->
-    <section class="section" id="experience">
+    <section class="section" id="experience" data-aos="flip-left" data-aos-delay="200">
         <div class="container" data-aos="fade-up">
             <h2 class="mb-4 text-center">Experience</h2>
             <div class="row g-4">
 
                 <!-- Lilac Infotech -->
                 <div class="col-md-4">
-                    <div class="project-card h-100 text-center">
+                    <div class="project-card h-100 text-center" data-aos="fade-up" data-aos-delay="100">
                         <img src="assets/lilac-logo.jpeg" alt="Lilac Infotech" class="mb-3" style="width: 80px;">
                         <h5>Associate Software Engineer</h5>
                         <p class="mb-1"><strong>Jan 2025 – Present</strong></p>
@@ -282,7 +503,7 @@
 
                 <!-- Niveosys -->
                 <div class="col-md-4">
-                    <div class="project-card h-100 text-center">
+                    <div class="project-card h-100 text-center" data-aos="fade-up" data-aos-delay="200">
                         <img src="assets/niveosys-logo.jpeg" alt="Niveosys" class="mb-3" style="width: 80px;">
                         <h5>PHP Laravel Developer</h5>
                         <p class="mb-1"><strong>Aug 2024 – Jan 2025</strong></p>
@@ -296,7 +517,7 @@
 
                 <!-- Savior Soft -->
                 <div class="col-md-4">
-                    <div class="project-card h-100 text-center">
+                    <div class="project-card h-100 text-center" data-aos="fade-up" data-aos-delay="300">
                         <img src="assets/saviorsoft-logo.png" alt="Savior Soft Solutions" class="mb-3" style="width: 80px;">
                         <h5>Laravel Developer</h5>
                         <p class="mb-1"><strong>Jan 2023 – May 2024</strong></p>
@@ -314,13 +535,13 @@
     </section>
 
     <!-- Projects -->
-    <section class="section" id="projects">
+    <section class="section" id="projects" data-aos="fade-up" data-aos-delay="100">
         <div class="container" data-aos="fade-up">
             <h2 class="mb-4 text-center">Projects</h2>
             <div class="row g-4">
 
                 <div class="col-md-6">
-                    <div class="project-card h-100">
+                    <div class="project-card h-100" data-aos="zoom-in-up" data-aos-delay="100">
                         <h5>Food Delivery App</h5>
                         <p>A subscription-based food ordering platform where users can select meals from specific
                             kitchens, schedule delivery by time and date (morning, afternoon, night), and manage orders
@@ -332,7 +553,7 @@
                 </div>
 
                 <div class="col-md-6">
-                    <div class="project-card h-100">
+                    <div class="project-card h-100" data-aos="zoom-in-up" data-aos-delay="200">
                         <h5>Cab Booking App</h5>
                         <p>A real-time cab booking system allowing users to book rides, track drivers on a live map,
                             estimate fares, and manage trip history. Includes driver management, location tracking, and
@@ -343,7 +564,7 @@
                 </div>
 
                 <div class="col-md-6">
-                    <div class="project-card h-100">
+                    <div class="project-card h-100" data-aos="zoom-in-up" data-aos-delay="300">
                         <h5>Trading Platform</h5>
                         <p>An interactive platform for users to buy and sell financial instruments. Includes real-time
                             market data, secure user authentication, portfolio management, and responsive design for
@@ -354,7 +575,7 @@
                 </div>
 
                 <div class="col-md-6">
-                    <div class="project-card h-100">
+                    <div class="project-card h-100" data-aos="zoom-in-up" data-aos-delay="400">
                         <h5>Hospital Management System</h5>
                         <p>A centralized system for managing hospital operations including patient records, appointment
                             scheduling, billing, inventory, and staff management. Improves workflow efficiency and
@@ -365,7 +586,7 @@
                 </div>
 
                 <div class="col-md-6">
-                    <div class="project-card h-100">
+                    <div class="project-card h-100" data-aos="zoom-in-up" data-aos-delay="500">
                         <h5>Billing Software</h5>
                         <p>A lightweight, easy-to-use solution for generating invoices, tracking payments, and managing
                             customer data. Tailored for small and medium-sized businesses.</p>
@@ -375,7 +596,7 @@
                 </div>
 
                 <div class="col-md-6">
-                    <div class="project-card h-100">
+                    <div class="project-card h-100" data-aos="zoom-in-up" data-aos-delay="600">
                         <h5>Job Searching Platform</h5>
                         <p>An advanced job portal where users can search for jobs, create profiles, upload resumes,
                             track applications, and receive job notifications. Employers can post jobs and manage
@@ -386,7 +607,7 @@
                 </div>
 
                 <div class="col-md-6">
-                    <div class="project-card h-100">
+                    <div class="project-card h-100" data-aos="zoom-in-up" data-aos-delay="700">
                         <h5>TCED CGRF (Thrissur Corporation Electricity Department)</h5>
                         <p>A government-focused complaint and service management system enabling citizens to register
                             electricity-related complaints and track resolutions. Includes admin panel, data
@@ -397,7 +618,7 @@
                 </div>
 
                 <div class="col-md-6">
-                    <div class="project-card h-100">
+                    <div class="project-card h-100" data-aos="zoom-in-up" data-aos-delay="800">
                         <h5>Insurance Investigation System</h5>
                         <p>A web and mobile solution for third-party insurance claim investigations. Supports field data
                             collection, photo uploads, case tracking, and secure communication with backend teams.</p>
@@ -411,7 +632,7 @@
     </section>
 
     <!-- Contact -->
-    <section class="section" id="contact">
+    <section class="section" id="contact" data-aos="fade-down-right" data-aos-delay="200">
         <div class="container" data-aos="fade-up">
             <h2 class="mb-4 text-center">Contact</h2>
             <div class="row">
@@ -428,13 +649,125 @@
     </section>
 
     <!-- Footer -->
-    <footer class="text-center p-4 bg-dark text-light">
+    <footer class="text-center p-4 bg-dark text-light" data-aos="fade-up" data-aos-delay="200">
         <p class="mb-0">&copy; 2025 Libin K K. All rights reserved.</p>
     </footer>
 
+    <!-- Floating Terminal Button -->
+    <!-- <div class="terminal-fab" id="terminalFab" title="Open Terminal">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m5 0h3m2 4a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2h14z"/></svg>
+    </div> -->
+    <div class="terminal-modal-backdrop" id="terminalBackdrop"></div>
+    <div class="terminal-modal" id="terminalModal">
+        <div class="terminal-header">
+            <span class="terminal-title">Hacker Terminal</span>
+        </div>
+        <div class="terminal-body">
+            <div class="terminal-content" id="terminalContent">
+                <!-- Terminal lines will be injected here -->
+            </div>
+        </div>
+        <button class="terminal-fab-close" id="terminalClose" title="Close Terminal" style="width: 100px; height: 100px;">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+    </div>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>AOS.init({ duration: 1000, once: true });</script>
+    <script>
+        AOS.init({ duration: 1200, once: true, mirror: true, easing: 'ease-in-out' });
+        // Terminal FAB logic
+        const fab = document.getElementById('terminalFab');
+        const modal = document.getElementById('terminalModal');
+        const closeBtn = document.getElementById('terminalClose');
+        const backdrop = document.getElementById('terminalBackdrop');
+        const terminalContent = document.getElementById('terminalContent');
+        let terminalHistory = [];
+        let terminalInput = null;
+        let terminalInputLine = null;
+        const commands = {
+            about: 'I am Libin K K, a passionate Full Stack Laravel Developer with 2+ years experience. I build scalable, secure, and user-friendly web applications. I love UI/UX, REST APIs, and modern tech. Always learning, always building.',
+            experience: `\n- Associate Software Engineer @ Lilac Infotech (Jan 2025 – Present)\n- PHP Laravel Developer @ Niveosys (Aug 2024 – Jan 2025)\n- Laravel Developer @ Savior Soft Solutions (Jan 2023 – May 2024)`,
+            project: `\n- Food Delivery App\n- Cab Booking App\n- Trading Platform\n- Hospital Management System\n- Billing Software\n- Job Searching Platform\n- TCED CGRF\n- Insurance Investigation System`,
+            contact: 'Email: libinkk1999@gmail.com | Phone: +91 7708782197 | Location: Kanyakumari, Tamil Nadu, India',
+            help: 'Available commands: about, experience, project, contact, help, clear',
+            clear: '',
+            exit: ''
+        };
+        function renderTerminal() {
+            terminalContent.innerHTML = '';
+            terminalHistory.forEach(item => {
+                const line = document.createElement('div');
+                line.className = 'terminal-line';
+                line.innerHTML = `<span class='terminal-prompt'>user@portfolio:~$</span> <span>${item.cmd}</span>`;
+                terminalContent.appendChild(line);
+                if (item.output) {
+                    const output = document.createElement('div');
+                    output.className = 'terminal-fake-output';
+                    output.innerHTML = item.output.replace(/\n/g, '<br>');
+                    terminalContent.appendChild(output);
+                }
+            });
+            // Add input line
+            terminalInputLine = document.createElement('div');
+            terminalInputLine.className = 'terminal-line';
+            terminalInputLine.innerHTML = `<span class='terminal-prompt'>user@portfolio:~$</span> <input class='terminal-input' id='terminalInput' autocomplete='off' autofocus spellcheck='false' /> <span class='terminal-cursor'></span>`;
+            terminalContent.appendChild(terminalInputLine);
+            terminalInput = document.getElementById('terminalInput');
+            terminalInput.focus();
+            terminalContent.scrollTop = terminalContent.scrollHeight;
+        }
+        function handleTerminalInput(e) {
+            if (e.key === 'Enter') {
+                const value = terminalInput.value.trim();
+                if (!value) return;
+                let output = '';
+                if (commands[value.toLowerCase()]) {
+                    if (value.toLowerCase() === 'clear') {
+                        terminalHistory = [];
+                        renderTerminal();
+                        return;
+                    }
+                    if (value.toLowerCase() === 'exit') {
+                        closeTerminal();
+                        return;
+                    }
+                    output = commands[value.toLowerCase()];
+                } else {
+                    output = `Command not found: <span style='color:#ff00c8'>${value}</span><br>Type <span style='color:#ff00c8'>help</span> for available commands.`;
+                }
+                terminalHistory.push({ cmd: value, output });
+                renderTerminal();
+            }
+        }
+        function openTerminal() {
+            modal.classList.add('active');
+            backdrop.classList.add('active');
+            if (terminalHistory.length === 0) {
+                terminalHistory.push({ cmd: '', output: "<span style='color:#00ffae'>Welcome to the interactive terminal.</span><br>Type <span style='color:#ff00c8'>help</span> to get started.<br><span style='color:#00ffae'>[This is a demo effect]</span>" });
+            }
+            renderTerminal();
+        }
+        function closeTerminal() {
+            modal.classList.remove('active');
+            backdrop.classList.remove('active');
+        }
+        fab.addEventListener('click', openTerminal);
+        closeBtn.addEventListener('click', closeTerminal);
+        backdrop.addEventListener('click', closeTerminal);
+        document.addEventListener('keydown', function(e) {
+            if (modal.classList.contains('active')) {
+                if (e.key === 'Escape') closeTerminal();
+                if (terminalInput && document.activeElement === terminalInput) {
+                    handleTerminalInput(e);
+                }
+            }
+        });
+        // Focus input on click anywhere in modal
+        modal.addEventListener('mousedown', function(e) {
+            if (terminalInput) terminalInput.focus();
+        });
+    </script>
 </body>
 
 </html>
