@@ -1,0 +1,65 @@
+/* Color Variables for Portfolio */
+:root {
+    /* Primary Colors */
+    --primary-bg: #030A1C;
+    --secondary-bg: #051024;
+    --tertiary-bg: #061831;
+    
+    /* Text Colors */
+    --text-primary: #ffffff;
+    --text-secondary: #bbb;
+    --text-accent: #00f0ff;
+    --text-success: #00ffae;
+    --text-error: #ff00c8;
+    
+    /* Accent Colors */
+    --accent-cyan: #00f0ff;
+    --accent-cyan-light: #0fffc1;
+    --accent-cyan-dark: #00d4e6;
+    
+    /* Glass Effect Colors */
+    --glass-bg: rgba(255, 255, 255, 0.05);
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --glass-shadow: rgba(31, 38, 135, 0.18);
+    
+    /* Glow Effects */
+    --glow-cyan-light: #00f0ff33;
+    --glow-cyan-medium: #00f0ff66;
+    --glow-cyan-strong: #00f0ff99;
+    --glow-cyan-intense: #00f0ffcc;
+    
+    /* Shadow Colors */
+    --shadow-light: rgba(0, 240, 255, 0.05);
+    --shadow-medium: rgba(0, 240, 255, 0.08);
+    --shadow-strong: rgba(0, 240, 255, 0.33);
+    --shadow-dark: rgba(0, 10, 26, 0.6);
+    
+    /* Gradient Colors */
+    --gradient-primary: linear-gradient(135deg, var(--accent-cyan) 60%, var(--accent-cyan-light) 100%);
+    --gradient-bg: linear-gradient(135deg, #0a1a2f 80%, #021015 100%);
+    
+    /* Border Colors */
+    --border-light: rgba(255, 255, 255, 0.1);
+    --border-accent: var(--accent-cyan);
+    
+    /* Hover States */
+    --hover-bg: var(--tertiary-bg);
+    --hover-shadow: 0 0 24px var(--accent-cyan), 0 0 48px var(--glow-cyan-light);
+    --hover-transform: translateY(-8px) scale(1.05);
+}
+
+/* Dark theme variations */
+.dark-theme {
+    --primary-bg: #030A1C;
+    --secondary-bg: #051024;
+    --tertiary-bg: #061831;
+}
+
+/* Light theme variations (if needed in future) */
+.light-theme {
+    --primary-bg: #f8fafc;
+    --secondary-bg: #f1f5f9;
+    --tertiary-bg: #e2e8f0;
+    --text-primary: #1e293b;
+    --text-secondary: #64748b;
+}
