@@ -1,0 +1,27 @@
+add more experiance 
+
+Investigation System
+My Work: Admin panel and mobile api for assign work and multi role login, data recived, report make 
+stack: html, css, js, ajax, laravel, mysql 
+
+Biju & Biju Organization 
+Location: Thrissur
+About Biju & Biju: BIJU & BIJU formerly known as Biju George and Associates is a Chartered Accountants firm based at Central Kerala-Thrissur was established in the year 2000 with a vision to provide services in the field of Finance, Accounts, Taxation, Management Consultancy and Credit appraisal of the customers & employees of Banks, NBFC’s and Multi National Companies.
+
+Realestate Management
+My Work: Admin property create, crud, website list all properties 
+stack: vue js, tailwind css, laravel, mysql 
+
+TCED
+Organazation: Thrissur Corporation Electricity Department 
+Project Type: Goverment 
+About TCED: Thrissur, the Cultural Capital of Kerala , is unique in being the only city in India where a Municipal Corporation directly manages electricity distribution.
+My Work: Website, admin panel, payemt section maintance 
+stack: html, css, js, ajax, laravel, mysql 
+
+
+Edit About Me: total experience 2.6 years
+
+Add Languages: Tamil, Malayalam, English
+
+Add Icons: Whatsapp (+917708782197), Instagram (user name: libin_k.k), GitHub (libin-k-k)

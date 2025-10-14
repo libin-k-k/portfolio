@@ -10,7 +10,7 @@
     <meta name="keywords" content="Libin K K, Laravel Developer, Full Stack Developer, Vue.js, PHP Developer, Web Developer, Calicut Developer, Kanyakumari Developer, Tamil Nadu Developer, Kerala Developer, MySQL, REST API, UI UX, Portfolio, Freelancer, Website Developer, Web Application Developer, Flutter Developer, Android App Developer, iOS App Developer, Mobile App Development">
     <meta name="author" content="Libin K K">
     <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://libinkk14.github.io/portfolio">
+    <link rel="canonical" href="https://libin-k-k.github.io/portfolio">
     <link rel="icon" type="image/png" href="assets/libin.png">
 
     <!-- Tailwind CSS -->
@@ -107,29 +107,122 @@
     </nav>
 
     <!-- Banner -->
-    <section class="min-h-screen flex items-center justify-center py-20" id="home">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                <div class="text-center lg:text-left" data-aos="fade-right">
-                    <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-4 md:mb-6 animate-slide-in-left leading-tight">
-                        Hi, I'm <span class="gradient-text animate-glow-text cursor-pointer hover:scale-105 transition-transform duration-300 inline-block">Libin K K</span>
+    <section class="min-h-screen flex items-center relative overflow-hidden" id="home">
+        <!-- Animated Wave Background -->
+        <div class="absolute inset-0 overflow-hidden pointer-events-none">
+            <!-- Wave Animation SVG -->
+            <svg class="absolute top-0 right-0 w-full h-full" viewBox="0 0 1440 800" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <linearGradient id="waveGradient1" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" style="stop-color:#00f0ff;stop-opacity:0.15" />
+                        <stop offset="100%" style="stop-color:#0fffc1;stop-opacity:0.05" />
+                    </linearGradient>
+                    <linearGradient id="waveGradient2" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" style="stop-color:#0fffc1;stop-opacity:0.1" />
+                        <stop offset="100%" style="stop-color:#00f0ff;stop-opacity:0.03" />
+                    </linearGradient>
+                </defs>
+                
+                <!-- Wave 1 -->
+                <path fill="url(#waveGradient1)" d="M0,160 C320,300,420,300,740,160 C1060,20,1120,140,1440,160 L1440,800 L0,800 Z">
+                    <animate attributeName="d" dur="10s" repeatCount="indefinite"
+                        values="M0,160 C320,300,420,300,740,160 C1060,20,1120,140,1440,160 L1440,800 L0,800 Z;
+                                M0,200 C320,100,420,200,740,200 C1060,200,1120,100,1440,200 L1440,800 L0,800 Z;
+                                M0,160 C320,300,420,300,740,160 C1060,20,1120,140,1440,160 L1440,800 L0,800 Z"/>
+                </path>
+                
+                <!-- Wave 2 -->
+                <path fill="url(#waveGradient2)" d="M0,300 C360,450,520,450,880,300 C1240,150,1320,280,1440,300 L1440,800 L0,800 Z">
+                    <animate attributeName="d" dur="15s" repeatCount="indefinite"
+                        values="M0,300 C360,450,520,450,880,300 C1240,150,1320,280,1440,300 L1440,800 L0,800 Z;
+                                M0,350 C360,200,520,300,880,350 C1240,400,1320,250,1440,350 L1440,800 L0,800 Z;
+                                M0,300 C360,450,520,450,880,300 C1240,150,1320,280,1440,300 L1440,800 L0,800 Z"/>
+                </path>
+            </svg>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+                
+                <!-- Left Side - Content -->
+                <div class="order-2 lg:order-1" data-aos="fade-right" data-aos-duration="1000">
+                    <!-- Social Icons -->
+                    <div class="flex gap-3 mb-6 animate-fade-in-glass" style="animation-delay: 0.2s; animation-fill-mode: both;">
+                        <a href="https://github.com/libin-k-k" target="_blank" rel="noopener noreferrer" 
+                           class="w-10 h-10 rounded-full bg-white/5 hover:bg-accent-cyan/20 border border-white/10 hover:border-accent-cyan flex items-center justify-center transition-all duration-300 hover:scale-110 group">
+                            <svg class="w-5 h-5 text-gray-400 group-hover:text-accent-cyan transition-colors" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                            </svg>
+                        </a>
+                        <a href="https://instagram.com/libin_k.k" target="_blank" rel="noopener noreferrer" 
+                           class="w-10 h-10 rounded-full bg-white/5 hover:bg-accent-cyan/20 border border-white/10 hover:border-accent-cyan flex items-center justify-center transition-all duration-300 hover:scale-110 group">
+                            <svg class="w-5 h-5 text-gray-400 group-hover:text-accent-cyan transition-colors" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                            </svg>
+                        </a>
+                    </div>
+
+                    <!-- Name -->
+                    <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 leading-tight animate-fade-in-glass" style="animation-delay: 0.4s; animation-fill-mode: both;">
+                        <span class="text-white">Libin K K</span>
                     </h1>
-                    <p class="text-lg sm:text-xl md:text-2xl text-accent-cyan mb-3 md:mb-4 animate-fade-in-glass">Full Stack Laravel Developer</p>
-                    <p class="text-base sm:text-lg text-gray-300 mb-6 md:mb-8 animate-fade-in-glass px-2 lg:px-0">Experienced in Laravel, Vue.js, UI/UX, REST APIs, and more</p>
-                    <a href="assets/libin-k-k.pdf" download class="inline-flex items-center gap-2 md:gap-3 bg-transparent border-2 border-accent-cyan text-accent-cyan px-4 sm:px-6 md:px-8 py-2 md:py-3 rounded-full font-semibold hover:bg-accent-cyan hover:text-primary-bg transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-accent-cyan/25 text-sm sm:text-base">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
-                        </svg>
-                        Download CV
-                    </a>
-                </div>
-                <div class="text-center" data-aos="fade-left">
-                    <div class="relative inline-block">
-                        <img src="assets/libin.png" alt="Libin K K" class="w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 lg:w-72 lg:h-72 xl:w-80 xl:h-80 rounded-full object-cover mx-auto animate-fade-zoom-in animate-float-y transition-all duration-500 hover:scale-105 profile-img">
-                        <!-- Ambient glow background -->
-                        <div class="absolute inset-0 rounded-full bg-gradient-radial from-accent-cyan/10 via-accent-cyan/5 to-transparent animate-pulse opacity-60 scale-150 -z-10"></div>
+
+                    <!-- Role with Underline -->
+                    <div class="mb-6 animate-fade-in-glass" style="animation-delay: 0.6s; animation-fill-mode: both;">
+                        <h2 class="text-2xl sm:text-3xl md:text-4xl font-semibold text-accent-cyan inline-block relative">
+                            Full Stack Developer
+                            <span class="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-accent-cyan to-accent-cyan-light rounded-full"></span>
+                        </h2>
+                    </div>
+
+                    <!-- Description -->
+                    <p class="text-base sm:text-lg md:text-xl text-gray-300 mb-4 leading-relaxed max-w-xl animate-fade-in-glass" style="animation-delay: 0.8s; animation-fill-mode: both;">
+                        Passionate Software Engineer with <span class="text-accent-cyan-light font-semibold">2.6+ years</span> of experience building scalable web applications using <span class="text-accent-cyan font-semibold">Laravel</span>, <span class="text-accent-cyan font-semibold">Vue.js</span>, and modern technologies.
+                    </p>
+
+                    <!-- Stats/Info -->
+                    <div class="flex flex-wrap gap-6 mb-8 animate-fade-in-glass" style="animation-delay: 1s; animation-fill-mode: both;">
+                        <div class="flex items-center gap-2">
+                            <div class="w-2 h-2 bg-accent-cyan rounded-full animate-pulse"></div>
+                            <span class="text-gray-300 text-sm">2.6+ Years Experience</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <div class="w-2 h-2 bg-accent-cyan-light rounded-full animate-pulse"></div>
+                            <span class="text-gray-300 text-sm">10+ Projects Delivered</span>
+                        </div>
+                    </div>
+
+                    <!-- CTA Button -->
+                    <div class="animate-fade-in-glass" style="animation-delay: 1.2s; animation-fill-mode: both;">
+                        <a href="assets/libin-k-k.pdf" download 
+                           class="group inline-flex items-center gap-3 bg-gradient-to-r from-accent-cyan to-accent-cyan-light text-primary-bg px-8 py-4 rounded-lg font-bold hover:shadow-2xl hover:shadow-accent-cyan/50 transition-all duration-500 transform hover:scale-105 hover:-translate-y-1 relative overflow-hidden">
+                            <span class="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-500"></span>
+                            <svg class="w-5 h-5 relative z-10 group-hover:animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                            </svg>
+                            <span class="relative z-10">Download CV</span>
+                        </a>
                     </div>
                 </div>
+
+                <!-- Right Side - Profile Image -->
+                <div class="order-1 lg:order-2 flex justify-center lg:justify-end" data-aos="fade-left" data-aos-duration="1000">
+                    <div class="relative animate-fade-in-glass" style="animation-delay: 0.4s; animation-fill-mode: both;">
+                        <!-- Glow Effect -->
+                        <div class="absolute inset-0 bg-gradient-to-br from-accent-cyan/20 to-accent-cyan-light/20 rounded-full blur-3xl animate-pulse"></div>
+                        
+                        <!-- Profile Image Container -->
+                        <div class="relative">
+                            <img src="assets/libin.png" alt="Libin K K" 
+                                 class="w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 lg:w-[450px] lg:h-[450px] rounded-full object-cover shadow-2xl shadow-accent-cyan/20 transform transition-all duration-700 hover:scale-105 hover:shadow-accent-cyan/40">
+                            
+                            <!-- Decorative Elements -->
+                            <div class="absolute -top-4 -right-4 w-20 h-20 bg-gradient-to-br from-accent-cyan to-accent-cyan-light rounded-full opacity-20 blur-xl animate-pulse"></div>
+                            <div class="absolute -bottom-4 -left-4 w-16 h-16 bg-gradient-to-br from-accent-cyan-light to-accent-cyan rounded-full opacity-20 blur-xl animate-pulse" style="animation-delay: 1s;"></div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
@@ -156,6 +249,15 @@
                 interfaces. I am committed to continuous learning and staying updated with evolving tech trends. Whether
                 it's collaborating in a team or working independently, I bring creativity, discipline, and technical
                 precision to every project.</p>
+
+                <div class="mt-6">
+                    <p class="font-semibold text-accent-cyan mb-3">Languages</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 rounded-full border border-accent-cyan/50 text-sm text-accent-cyan bg-accent-cyan/10">Tamil</span>
+                        <span class="px-3 py-1 rounded-full border border-accent-cyan/50 text-sm text-accent-cyan bg-accent-cyan/10">Malayalam</span>
+                        <span class="px-3 py-1 rounded-full border border-accent-cyan/50 text-sm text-accent-cyan bg-accent-cyan/10">English</span>
+                    </div>
+                </div>
                 </div>
             </div>
         </div>
@@ -424,6 +526,24 @@
                     </div>
                 </div>
 
+                <div class="glass-card rounded-xl md:rounded-2xl p-4 md:p-6 lg:p-8 h-full transition-all duration-300 hover:scale-105 opacity-0 translate-y-10 animate-fade-up-card border-accent-cyan-light/20" data-aos="zoom-in-up" data-aos-delay="820" style="animation: fadeUpCard 1.2s forwards 0.82s, projectShimmer 4s ease-in-out infinite 2.32s, projectFloat 6s ease-in-out infinite 2.82s;">
+                    <h5 class="text-xl font-bold text-accent-cyan mb-4">TCED (Thrissur Corporation Electricity Department)</h5>
+                    <p class="text-gray-300 mb-4 leading-relaxed">Website, admin panel, and payment section maintenance for the municipal electricity department. Focused on secure payments and reliable operations.</p>
+                    <div class="text-sm">
+                        <strong class="text-accent-cyan">Technologies Used:</strong> 
+                        <span class="text-gray-300">HTML, CSS, Bootstrap, JavaScript, AJAX, jQuery, PHP, Laravel, MySQL</span>
+                    </div>
+                </div>
+
+                <div class="glass-card rounded-xl md:rounded-2xl p-4 md:p-6 lg:p-8 h-full transition-all duration-300 hover:scale-105 opacity-0 translate-y-10 animate-fade-up-card border-accent-cyan-light/20" data-aos="zoom-in-up" data-aos-delay="840" style="animation: fadeUpCard 1.2s forwards 0.84s, projectShimmer 4s ease-in-out infinite 2.34s, projectFloat 6s ease-in-out infinite 2.84s;">
+                    <h5 class="text-xl font-bold text-accent-cyan mb-4">Biju &amp; Biju Organization</h5>
+                    <p class="text-gray-300 mb-4 leading-relaxed">A role-based platform to assign work, receive field data, and generate reports for a Chartered Accountants firm.</p>
+                    <div class="text-sm">
+                        <strong class="text-accent-cyan">Technologies Used:</strong> 
+                        <span class="text-gray-300">HTML, CSS, Bootstrap, JavaScript, AJAX, jQuery, PHP, Laravel, MySQL</span>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
@@ -494,6 +614,21 @@
                             </div>
                             <p class="text-lg font-semibold gradient-text">Let's Connect!</p>
                             <p class="text-gray-300">Ready to bring your ideas to life</p>
+
+                            <div class="mt-4 flex items-center justify-center gap-3">
+                                <a href="https://wa.me/917708782197" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"
+                                   class="w-10 h-10 rounded-full bg-accent-cyan/10 hover:bg-accent-cyan/20 border border-accent-cyan/30 flex items-center justify-center transition-all duration-300 hover:scale-110">
+                                    <img src="https://img.icons8.com/color/48/whatsapp--v1.png" alt="WhatsApp" class="w-5 h-5">
+                                </a>
+                                <a href="https://instagram.com/libin_k.k" target="_blank" rel="noopener noreferrer" aria-label="Instagram"
+                                   class="w-10 h-10 rounded-full bg-accent-cyan/10 hover:bg-accent-cyan/20 border border-accent-cyan/30 flex items-center justify-center transition-all duration-300 hover:scale-110">
+                                    <img src="https://img.icons8.com/fluency/48/instagram-new.png" alt="Instagram" class="w-5 h-5">
+                                </a>
+                                <a href="https://github.com/libin-k-k" target="_blank" rel="noopener noreferrer" aria-label="GitHub"
+                                   class="w-10 h-10 rounded-full bg-accent-cyan/10 hover:bg-accent-cyan/20 border border-accent-cyan/30 flex items-center justify-center transition-all duration-300 hover:scale-110">
+                                    <img src="https://img.icons8.com/ios-glyphs/48/github.png" alt="GitHub" class="w-5 h-5">
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
