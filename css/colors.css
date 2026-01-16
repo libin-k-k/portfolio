@@ -1,65 +1,42 @@
-/* Color Variables for Portfolio */
+/* Professional Netherlands-Friendly Color Scheme */
 :root {
-    /* Primary Colors */
-    --primary-bg: #030A1C;
-    --secondary-bg: #051024;
-    --tertiary-bg: #061831;
+    /* Primary Colors - Clean & Professional */
+    --primary-bg: #FFFFFF;
+    --secondary-bg: #F8FAFB;
+    --tertiary-bg: #F0F4F8;
     
     /* Text Colors */
-    --text-primary: #ffffff;
-    --text-secondary: #bbb;
-    --text-accent: #00f0ff;
+    --text-primary: #1A2332;
+    --text-secondary: #5A6C7D;
+    --text-tertiary: #8B98A5;
+    --text-accent: #2E5C8A;
     --text-success: #00ffae;
-    --text-error: #ff00c8;
+    --text-error: #E63946;
     
-    /* Accent Colors */
-    --accent-cyan: #00f0ff;
-    --accent-cyan-light: #0fffc1;
-    --accent-cyan-dark: #00d4e6;
+    /* Accent Colors - Professional Blue/Navy */
+    --accent-primary: #2E5C8A;
+    --accent-secondary: #4A90E2;
+    --accent-tertiary: #1A4971;
+    --accent-light: #E8F2F7;
     
     /* Glass Effect Colors */
-    --glass-bg: rgba(255, 255, 255, 0.05);
-    --glass-border: rgba(255, 255, 255, 0.1);
-    --glass-shadow: rgba(31, 38, 135, 0.18);
-    
-    /* Glow Effects */
-    --glow-cyan-light: #00f0ff33;
-    --glow-cyan-medium: #00f0ff66;
-    --glow-cyan-strong: #00f0ff99;
-    --glow-cyan-intense: #00f0ffcc;
+    --glass-bg: rgba(255, 255, 255, 0.85);
+    --glass-border: rgba(46, 92, 138, 0.15);
+    --glass-shadow: rgba(26, 35, 50, 0.08);
     
     /* Shadow Colors */
-    --shadow-light: rgba(0, 240, 255, 0.05);
-    --shadow-medium: rgba(0, 240, 255, 0.08);
-    --shadow-strong: rgba(0, 240, 255, 0.33);
-    --shadow-dark: rgba(0, 10, 26, 0.6);
-    
-    /* Gradient Colors */
-    --gradient-primary: linear-gradient(135deg, var(--accent-cyan) 60%, var(--accent-cyan-light) 100%);
-    --gradient-bg: linear-gradient(135deg, #0a1a2f 80%, #021015 100%);
+    --shadow-light: rgba(26, 35, 50, 0.04);
+    --shadow-medium: rgba(26, 35, 50, 0.08);
+    --shadow-strong: rgba(26, 35, 50, 0.15);
+    --shadow-dark: rgba(26, 35, 50, 0.25);
     
     /* Border Colors */
-    --border-light: rgba(255, 255, 255, 0.1);
-    --border-accent: var(--accent-cyan);
+    --border-light: #E0E6ED;
+    --border-medium: #CBD5E0;
+    --border-accent: var(--accent-primary);
     
     /* Hover States */
     --hover-bg: var(--tertiary-bg);
-    --hover-shadow: 0 0 24px var(--accent-cyan), 0 0 48px var(--glow-cyan-light);
-    --hover-transform: translateY(-8px) scale(1.05);
-}
-
-/* Dark theme variations */
-.dark-theme {
-    --primary-bg: #030A1C;
-    --secondary-bg: #051024;
-    --tertiary-bg: #061831;
-}
-
-/* Light theme variations (if needed in future) */
-.light-theme {
-    --primary-bg: #f8fafc;
-    --secondary-bg: #f1f5f9;
-    --tertiary-bg: #e2e8f0;
-    --text-primary: #1e293b;
-    --text-secondary: #64748b;
+    --hover-shadow: 0 8px 20px var(--shadow-medium);
+    --hover-transform: translateY(-2px);
 }
