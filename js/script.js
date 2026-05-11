@@ -20,7 +20,9 @@ document.addEventListener('DOMContentLoaded', function() {
             const targetSection = document.querySelector(targetId);
             
             if (targetSection) {
-                const offsetTop = targetSection.offsetTop - 80; // Account for fixed navbar
+                // Check if we're on mobile and adjust offset for footer nav
+                const isMobile = window.innerWidth < 768;
+                const offsetTop = targetSection.offsetTop - (isMobile ? 100 : 80); // Account for fixed navbar and mobile footer
                 window.scrollTo({
                     top: offsetTop,
                     behavior: 'smooth'
@@ -770,4 +772,141 @@ class HackerTerminal {
 // Initialize terminal when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
     new HackerTerminal();
+});
+
+// Mobile Footer Navigation Swipe Functionality
+class MobileFooterNavigation {
+    constructor() {
+        this.footerNav = document.querySelector('nav.md\\:hidden.fixed.bottom-0');
+        this.navItems = document.querySelectorAll('nav.md\\:hidden.fixed.bottom-0 a');
+        this.currentIndex = 0;
+        this.touchStartX = 0;
+        this.touchEndX = 0;
+        this.minSwipeDistance = 50;
+        this.isSwiping = false;
+        
+        this.init();
+    }
+    
+    init() {
+        if (!this.footerNav || window.innerWidth >= 768) return;
+        
+        // Add touch event listeners
+        this.footerNav.addEventListener('touchstart', this.handleTouchStart.bind(this), { passive: false });
+        this.footerNav.addEventListener('touchmove', this.handleTouchMove.bind(this), { passive: false });
+        this.footerNav.addEventListener('touchend', this.handleTouchEnd.bind(this), { passive: false });
+        
+        // Update active state based on current section
+        this.updateActiveState();
+        window.addEventListener('scroll', this.updateActiveState.bind(this));
+        
+        // Handle orientation changes
+        window.addEventListener('orientationchange', () => {
+            setTimeout(() => this.updateActiveState(), 100);
+        });
+    }
+    
+    handleTouchStart(e) {
+        this.touchStartX = e.touches[0].clientX;
+        this.isSwiping = false;
+    }
+    
+    handleTouchMove(e) {
+        if (!this.touchStartX) return;
+        
+        const currentX = e.touches[0].clientX;
+        const diffX = Math.abs(currentX - this.touchStartX);
+        
+        // Only prevent default if it's a horizontal swipe
+        if (diffX > 10) {
+            e.preventDefault();
+            this.isSwiping = true;
+        }
+    }
+    
+    handleTouchEnd(e) {
+        if (!this.isSwiping || !this.touchStartX) return;
+        
+        this.touchEndX = e.changedTouches[0].clientX;
+        this.handleSwipe();
+        
+        // Reset touch coordinates
+        this.touchStartX = 0;
+        this.touchEndX = 0;
+        this.isSwiping = false;
+    }
+    
+    handleSwipe() {
+        const swipeDistance = this.touchEndX - this.touchStartX;
+        
+        if (Math.abs(swipeDistance) > this.minSwipeDistance) {
+            if (swipeDistance > 0) {
+                // Swipe right - go to previous item
+                this.navigateToItem(Math.max(0, this.currentIndex - 1));
+            } else {
+                // Swipe left - go to next item
+                this.navigateToItem(Math.min(this.navItems.length - 1, this.currentIndex + 1));
+            }
+            
+            // Add haptic feedback if available
+            if (navigator.vibrate) {
+                navigator.vibrate(20);
+            }
+        }
+    }
+    
+    navigateToItem(index) {
+        if (index !== this.currentIndex && this.navItems[index]) {
+            this.currentIndex = index;
+            const targetLink = this.navItems[index];
+            const targetHref = targetLink.getAttribute('href');
+            
+            // Smooth scroll to section
+            const targetSection = document.querySelector(targetHref);
+            if (targetSection) {
+                const offsetTop = targetSection.offsetTop - 100;
+                window.scrollTo({
+                    top: offsetTop,
+                    behavior: 'smooth'
+                });
+            }
+            
+            // Update active state
+            this.updateActiveState();
+        }
+    }
+    
+    updateActiveState() {
+        const scrollPosition = window.scrollY + 150; // Offset for better detection
+        
+        this.navItems.forEach((item, index) => {
+            const targetId = item.getAttribute('href');
+            const targetSection = document.querySelector(targetId);
+            
+            if (targetSection) {
+                const sectionTop = targetSection.offsetTop;
+                const sectionBottom = sectionTop + targetSection.offsetHeight;
+                
+                if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+                    this.currentIndex = index;
+                    // Add active state styling
+                    item.classList.add('active');
+                    item.style.backgroundColor = 'rgba(255, 255, 255, 0.3)';
+                    item.style.transform = 'scale(1.05)';
+                } else {
+                    item.classList.remove('active');
+                    item.style.backgroundColor = '';
+                    item.style.transform = 'scale(1)';
+                }
+            }
+        });
+    }
+}
+
+// Initialize mobile footer navigation when DOM is loaded
+document.addEventListener('DOMContentLoaded', () => {
+    // Only initialize on mobile devices
+    if (window.innerWidth < 768) {
+        new MobileFooterNavigation();
+    }
 });
